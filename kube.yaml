@@ -23,21 +23,6 @@ spec:
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: {{profiles}}
-        - name: DB_USER
-          valueFrom:
-            secretKeyRef:
-              name: dbconf
-              key: username
-        - name: DB_PASS
-          valueFrom:
-            secretKeyRef:
-              name: dbconf
-              key: password
-        - name: ENDPOINT
-          valueFrom:
-            secretKeyRef:
-              name: dbconf
-              key: endpoint
       imagePullSecrets:
         - name: ecr-secret
 ---
