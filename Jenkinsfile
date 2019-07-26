@@ -7,20 +7,20 @@ node{
         sh 'ls -la'
     }
 
-    withEnv([
-        'SERVICE=order-service',
-    ]){
-        stage('Build') {
-            sh './build.sh'
-        }
-    }
+    withCredentials([[$class: 'FileBinding', credentialsId: 'KUBE_CONFIG', variable: 'KUBE_CONFIG']]) {
 
-    // withEnv([
-    //     'SERVICE=order-service',
-    //     'PROFILES=dev'
-    // ]){
-    //     stage('Deploy') {
-    //         sh './deploy.sh'
-    //     }
-    // }
+      withEnv([
+        'SERVICE=order-service',
+        'PROFILES=dev'
+      ]){
+          stage('Build') {
+              sh './build.sh'
+          }
+
+          stage('Deploy') {
+              sh './deploy.sh'
+          }
+      }
+
+    }
 }
