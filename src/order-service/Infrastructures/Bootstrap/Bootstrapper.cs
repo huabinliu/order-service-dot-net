@@ -14,7 +14,8 @@ namespace order_service.Infrastructures.Bootstrap
             this.services = services;
             modules = new[]
             {
-                customDbModule ?? new SqliteDatabase()
+                customDbModule ?? new SqliteDatabase(),
+                new ServiceModule()
             };
         }
 

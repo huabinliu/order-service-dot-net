@@ -7,6 +7,7 @@ using NHibernate.Cfg;
 using NHibernate.Context;
 using NHibernate.Engine;
 using NHibernate.Tool.hbm2ddl;
+using order_service.Applications;
 using order_service.Controllers;
 
 namespace order_service.Infrastructures.Bootstrap.DatabaseModules

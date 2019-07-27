@@ -3,6 +3,7 @@ using FluentNHibernate.Cfg.Db;
 using Microsoft.Extensions.DependencyInjection;
 using NHibernate;
 using NHibernate.Context;
+using order_service.Applications;
 using order_service.Controllers;
 
 namespace order_service.Infrastructures.Bootstrap.DatabaseModules
